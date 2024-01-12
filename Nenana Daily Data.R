@@ -2,7 +2,6 @@
 
 ### Calculate daily avg, max, and min for Stage and Flow. 
 
-
 require(lubridate)
 require(dplyr)
 require(writexl)
@@ -10,12 +9,14 @@ require(readxl)
 
 Nenana_Data$Date <- as.Date(Nenana_Data$`Date (UTC)`) #format date
 
+#aggregate data:
 nenana_dailymean <- aggregate(Nenana_Data, by = list(Group.date = Nenana_Data$Date), FUN = mean) 
 
 nenana_dailymin <- aggregate(Nenana_Data, by = list(Group.date = Nenana_Data$Date), FUN = min)
 
 nenana_dailymax <- aggregate(Nenana_Data, by = list(Group.date = Nenana_Data$Date), FUN = max)
 
+#calculate daily mean, min, and max:
 nenana_dailymean <- nenana_dailymean %>% 
   rename("Daily Mean Stage" = "Stage",
          "Daily Mean Flow" = "Flow")
