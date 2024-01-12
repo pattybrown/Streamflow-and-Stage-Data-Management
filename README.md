@@ -1,3 +1,3 @@
-# river-data
+# Streamflow and Stage Data Management
 ## Nenana River
-aggregate stage and flow measurements by date to determine daily mean, min and max values. 
+This project aggregates stage and streamflow measurements by date to determine daily mean, min and max values. 
